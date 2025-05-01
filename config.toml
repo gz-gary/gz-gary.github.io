@@ -1,304 +1,70 @@
-base_url = "https://salif.github.io/linkita"
-theme = "linkita"
-
-# Default language is Bulgarian
-default_language = "bg"
-author = "sample_username"
-compile_sass = false
-minify_html = false
-exclude_paginated_pages_in_sitemap = "all"
-hard_link_static = false
-generate_sitemap = true
-generate_robots_txt = true
-
-# [languages.bg]
-title = "Линкита"
-description = "Линкита е многоезична, оптимизирана за търсачки, изчистена и елегантна блог тема за Зола."
-generate_feeds = true
-feed_filenames = ["atom.xml"]
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 5 },
-  { name = "authors", feed = true, paginate_by = 5 },
-]
-
-[languages.en]
-title = "Linkita"
-description = "A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly."
+author = "gryz"
+title = "gryz's Blog"
+base_url = "https://zjlwiki.top"
+compile_sass = true
 build_search_index = true
 generate_feeds = true
-feed_filenames = ["atom.xml"]
+feed_filenames = [ "atom.xml",]
+minify_html = true
+
+
 taxonomies = [
-  { name = "tags", feed = true, paginate_by = 5 },
-  { name = "authors", feed = true, paginate_by = 5 },
+    { name = "tags", feed = true }
 ]
 
-[languages.ar]
-title = "لينكيتا"
-description = "لينكيتا هو قالب مدونة زولا."
-generate_feeds = true
-feed_filenames = ["atom.xml"]
-taxonomies = [
-  { name = "tags", feed = false, paginate_by = 5 },
-  { name = "authors", feed = false, paginate_by = 5 },
-]
-
-[languages.eo]
-title = "Linkita"
-description = "Pura kaj eleganta bloga temo por Zola. Linkita baziĝas sur Kita kaj Hugo-Paper kaj estas plurlingva kaj SEO-amika."
-generate_feeds = true
-feed_filenames = ["atom.xml"]
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 5 },
-  { name = "authors", feed = true, paginate_by = 5 },
-]
-
-[languages.gb]
-title = "Linkita"
-generate_feeds = false
-taxonomies = [
-  { name = "tags", feed = false, paginate_by = 5 },
-  { name = "authors", feed = false, paginate_by = 5 },
-]
-
-[languages.tr]
-title = "Linkita"
-description = "Zola için temiz ve şık bir blog teması. Linkita, Kita ve Hugo-Paper'ı temel alır ve çok dilli ve SEO uyumludur."
-build_search_index = true
-generate_feeds = true
-feed_filenames = ["atom.xml"]
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 5 },
-  { name = "authors", feed = true, paginate_by = 5 },
-]
-
-[languages.zh]
-title = "林基塔"
-description = "林基塔 是一款适用于 左拉 的多语言、搜索引擎优化、简洁优雅的博客主题。"
-generate_feeds = true
-feed_filenames = ["atom.xml"]
-taxonomies = [
-  { name = "tags", feed = true, paginate_by = 5 },
-  { name = "authors", feed = true, paginate_by = 5 },
-]
+[search]
+# Whether to include the title of the page/section in the index
+include_title = true
+# Whether to include the description of the page/section in the index
+include_description = false
+# Whether to include the path of the page/section in the index
+include_path = false
+# Whether to include the rendered content of the page/section in the index
+include_content = true
+# At which character to truncate the content to. Useful if you have a lot of pages and the index would
+# become too big to load on the site. Defaults to not being set.
+# truncate_content_length = 100
+# Wether to produce the search index as a javascript file or as a JSON file
+# Accepted value "elasticlunr_javascript" or "elasticlunr_json"
+index_format = "elasticlunr_json"
 
 [markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-error_on_missing_highlight = false
-highlight_theme = "boron"
-render_emoji = false
-smart_punctuation = false
-definition_list = true
-bottom_footnotes = true
 
 [extra]
-math = false
-mermaid = false
-comment = false
-title_separator = " | "
-header_menu_name = "sample_header"
-page_info = [{ when="date" }, { when="date_updated", prepend="(", append=")" }, { when="reading_time" }]
-page_info_on_paginator = [{ when="date" }, { when="reading_time" }, { when="authors" }]
-use_cdn = false
-relative_urls = false
-urls_to_index_html = false
-disable_default_favicon = false
-page_summary_on_paginator = false
-invert_page_navigation = false
 
-[extra.style]
-# bg_color = ""
-# bg_dark_color = ""
-# header_blur = true
-# header_color = ""
-# header_dark_color = ""
-
-[extra.menus]
-sample_header = [
-  { url = "$BASE_URL/projects/", name = "Projects", names_i18n = "common_projects" },
-  { url = "$BASE_URL/archive/", name = "Archive", names_i18n = "common_archive" },
-  { url = "$BASE_URL/tags/", name = "Tags", names_i18n = "common_tags" },
-  { url = "$BASE_URL/about/", name = "About", names_i18n = "common_about" },
-]
-
-[extra.profiles]
-
-# Linkita's profile
-[extra.profiles.sample_username]
-avatar_url = "icons/github.svg"
-avatar_invert = true
-# avatar_alt = "Default alt text"
-# name = "Default name"
-# bio = "Default bio"
-social = [
-  { name = "codeberg", url = "https://codeberg.org/salif/linkita" },
-  { name = "github", url = "https://github.com/salif/linkita" },
-  { name = "rss", url = "$BASE_URL/atom.xml" },
-]
-
-[extra.profiles.sample_username.languages]
-[extra.profiles.sample_username.languages.bg]
-name = "Линкита - Тема за Зола"
-bio = "Линкита е многоезична, оптимизирана за търсачки, изчистена и елегантна блог тема за Зола."
-avatar_alt = "Демонстративен аватар за профила."
-[extra.profiles.sample_username.languages.en]
-name = "Linkita - Zola Theme"
-bio = "A clean and elegant blog theme for Zola. Linkita is based on Kita and Hugo-Paper and is multilingual and SEO friendly."
-avatar_alt = "Demo profile avatar."
-[extra.profiles.sample_username.languages.ar]
-name = "لينكيتا - قوالب مدونة زولا"
-bio = "لينكيتا هو قالب مدونة زولا."
-avatar_alt = "الصورة الرمزية للملف الشخصي التجريبي"
-[extra.profiles.sample_username.languages.eo]
-name = "Linkita - Temo por Zola"
-bio = "Pura kaj eleganta bloga temo por Zola. Linkita baziĝas sur Kita kaj Hugo-Paper kaj estas plurlingva kaj SEO-amika."
-avatar_alt = "Demoprofila avataro."
-[extra.profiles.sample_username.languages.tr]
-name = "Linkita - Zola için Tema"
-bio = "Zola için temiz ve şık bir blog teması. Linkita, Kita ve Hugo-Paper'ı temel alır ve çok dilli ve SEO uyumludur."
-avatar_alt = "Demo profil avatarı."
-[extra.profiles.sample_username.languages.zh]
-name = "林基塔 - 左拉的主题"
-bio = "林基塔 是一款适用于 左拉 的多语言、搜索引擎优化、简洁优雅的博客主题。"
-avatar_alt = "演示个人资料头像。"
-
-[extra.profiles.sample_username.open_graph]
-image = "images/screenshot.png"
-image_alt = "A screenshot of this website."
-[extra.profiles.sample_username.open_graph.languages]
-bg = { image_alt = "Екранна снимка на този сайт." }
-ar = { image_alt = "لقطة شاشة لهذا الموقع." }
-eo = { image_alt = "Ekrankopio de ĉi tiu retejo." }
-tr = { image_alt = "Bu web sitesinin ekran görüntüsü." }
-zh = { image_alt = "该网站的截图。" }
-
-# Salif's profile
-[extra.profiles.salif]
-name = "Salif"
-bio = "Hi! I'm the author."
-
-[extra.profiles.salif.languages]
-[extra.profiles.salif.languages.bg]
-name = "Салиф"
-bio = "Здравейте! Аз съм авторът тук."
-[extra.profiles.salif.languages.ar]
-name = "ساليف"
-bio = "مرحبًا! انا المؤلف."
-[extra.profiles.salif.languages.eo]
-name = "Salif"
-bio = "Saluton! Mi estas la aŭtoro."
-[extra.profiles.salif.languages.gb]
-name = "Salif"
-bio = "Salom! Mi sen eskriyen."
-[extra.profiles.salif.languages.tr]
-name = "Salif"
-bio = "Merhaba! Ben yazarım."
-[extra.profiles.salif.languages.zh]
-name = "萨利夫"
-bio = "您好！我是作者。"
-
-[extra.profiles.salif.open_graph]
-first_name = "Salif"
-last_name = "Mehmed"
-username = "salif"
-gender = "male"
-[extra.profiles.salif.open_graph.fediverse_creator]
-handle = "bg.salif.eu"
-domain = "bsky.brid.gy"
-# Set url because I'm using bridge instead of a real mastodon account
-url = "https://bsky.brid.gy/ap/did:plc:3ebgy675tgwzqudufqvifpxv"
-
-[[extra.profiles.salif.social]]
-name = "codeberg"
-url = "https://codeberg.org/salif"
-[[extra.profiles.salif.social]]
-name = "github"
-url = "https://github.com/salif"
-[[extra.profiles.salif.social]]
-name = "home"
-url = "https://salif.eu/"
-[extra.profiles.salif.social.urls]
-bg = "https://salif.eu/bg/"
-eo = "https://salif.eu/eo/"
-tr = "https://salif.eu/tr/"
-[[extra.profiles.salif.social]]
-name = "bluesky"
-url = "https://bsky.app/profile/bg.salif.eu"
-[[extra.profiles.salif.social]]
-name = "rss"
-url = "$BASE_URL/authors/salif/atom.xml"
-
-# Kita's profile
-[extra.profiles.kita]
-name = "Kita"
-bio = "Linkita is based on st1020's Kita theme."
-social = [
-  { name = "github", url = "https://github.com/st1020/kita" },
-  { name = "home", url = "https://kita-zola.pages.dev/" },
-  { name = "rss", url = "$BASE_URL/authors/kita/atom.xml" },
-]
-
-[extra.footer]
-since = 2020
-license_url = "https://creativecommons.org/licenses/by-sa/4.0/"
-copyright = "&copy; $YEAR Linkita &vert; [CC BY-SA 4.0]($LICENSE_URL)"
-
-[extra.languages]
-
-[extra.languages.en]
-locale = "en_US"
-date_format = "%F"
-
-[extra.languages.en.taxonomy_descriptions]
-tags = "A map of all tags on this site. Start exploring!"
-authors = "A map of all authors on this site. Start exploring!"
-[extra.languages.en.term_descriptions]
-tags = "Browse articles related to $NAME. Start exploring!"
-authors = "Browse articles written by $NAME. Start exploring!"
-
-[extra.languages.bg]
-locale = "bg_BG"
-date_format = "%d %b %Y"
-
-[extra.languages.bg.taxonomy_descriptions]
-tags = "Разгледайте всички етикети на този сайт!"
-authors = "Разгледайте всички автори на този сайт!"
-[extra.languages.bg.term_descriptions]
-tags = "Списък на страниците отнасящи се до $NAME."
-authors = "Списък на страниците написани от $NAME."
-
-[extra.languages.ar]
-locale = "ar_EG"
-date_format = "%x"
-
-[extra.languages.eo]
-locale = "eo"
-date_format = "%d %b %Y"
-
-[extra.languages.gb]
-language_code = "art-x-globasa"
-
-[extra.languages.tr]
-locale = "tr_TR"
-date_format = "%d %b %Y"
-
-[extra.languages.zh]
-locale = "zh_CN"
-date_format = "%x"
-
-# If you copy this file to your site, remove this:
-[extra.goatcounter]
-endpoint = "https://sgi.goatcounter.com/count"
-
-[extra.giscus]
-repo = ""
-repo_id = ""
-category = ""
-category_id = ""
-mapping = "pathname"
-strict = 1
-reactions_enabled = 0
-emit_metadata = 0
-input_position = "top"
+[extra.papermod]
+title = "gryz's Blog"
+default_theme = "auto"
 theme = "light"
-lang = "en"
-loading = "lazy"
+language_direction = "auto"
+keywords = ["keyword1", "keyword2", "keyword3"]
+show_theme_toggle = true
+show_scroll_to_top = true
+show_code_copy_buttons = true
+show_reading_time = true
+show_word_count = false
+show_post_nav_links = true
+show_post_meta = true
+default_toc_open = false
+show_post_edit_button = false
+edit_post_url = "https://github.com/cydave/zola-theme-papermod/tree/master"
+#copyright = ""
+date_format = "%Y-%m-%d"
+navigation = [
+    { url = "$BASE_URL/archive", title = "Archive" },
+    { url = "$BASE_URL/tags", title = "Tags" },
+    { url = "$BASE_URL/search", title = "Search" },
+    { url = "https://getzola.org/", title = "Zola", is_external = true }
+]
+
+home_title = "gryz's Blog"
+home_content = "This is gryz's blog."
+social_icons = [
+    { url = "https://github.com/cydave", title = "GitHub", icon = "github" },
+    { url = "https://infosec.exchange/@cydave", title = "Mastodon", icon = "mastodon" },
+    { url = "https://twitter.com/_cydave", title = "Twitter", icon = "twitter" },
+    { url = "$BASE_URL/atom.xml", title = "RSS", icon = "rss" },
+]
