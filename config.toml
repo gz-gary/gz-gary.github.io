@@ -1,70 +1,35 @@
-author = "gryz"
-title = "gryz's Blog"
+# The URL the site will be built for
 base_url = "https://zjlwiki.top"
+
+title = "gryz"
+
+# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-build_search_index = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
 generate_feeds = true
-feed_filenames = [ "atom.xml",]
-minify_html = true
-
-
-taxonomies = [
-    { name = "tags", feed = true }
-]
-
-[search]
-# Whether to include the title of the page/section in the index
-include_title = true
-# Whether to include the description of the page/section in the index
-include_description = false
-# Whether to include the path of the page/section in the index
-include_path = false
-# Whether to include the rendered content of the page/section in the index
-include_content = true
-# At which character to truncate the content to. Useful if you have a lot of pages and the index would
-# become too big to load on the site. Defaults to not being set.
-# truncate_content_length = 100
-# Wether to produce the search index as a javascript file or as a JSON file
-# Accepted value "elasticlunr_javascript" or "elasticlunr_json"
-index_format = "elasticlunr_json"
+feed_filenames = ["index.xml"]
 
 [markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
+highlight_theme = "inspired-github"
+
+render_emoji = true
+bottom_footnotes = true
 
 [extra]
+# Put all your custom variables here
 
-[extra.papermod]
-title = "gryz's Blog"
-default_theme = "auto"
-theme = "light"
-language_direction = "auto"
-keywords = ["keyword1", "keyword2", "keyword3"]
-show_theme_toggle = true
-show_scroll_to_top = true
-show_code_copy_buttons = true
-show_reading_time = true
-show_word_count = false
-show_post_nav_links = true
-show_post_meta = true
-default_toc_open = false
-show_post_edit_button = false
-edit_post_url = "https://github.com/cydave/zola-theme-papermod/tree/master"
-#copyright = ""
-date_format = "%Y-%m-%d"
-navigation = [
-    { url = "$BASE_URL/archive", title = "Archive" },
-    { url = "$BASE_URL/tags", title = "Tags" },
-    { url = "$BASE_URL/search", title = "Search" },
-    { url = "https://getzola.org/", title = "Zola", is_external = true }
-]
+[[extra.nav]]
+name = "Home"
+url = "@/_index.md"
 
-home_title = "gryz's Blog"
-home_content = "This is gryz's blog."
-social_icons = [
-    { url = "https://github.com/cydave", title = "GitHub", icon = "github" },
-    { url = "https://infosec.exchange/@cydave", title = "Mastodon", icon = "mastodon" },
-    { url = "https://twitter.com/_cydave", title = "Twitter", icon = "twitter" },
-    { url = "$BASE_URL/atom.xml", title = "RSS", icon = "rss" },
-]
+[[extra.nav]]
+name = "Posts"
+url = "@/posts/_index.md"
+
+[[extra.nav]]
+name = "About"
+url = "@/about/_index.md"
